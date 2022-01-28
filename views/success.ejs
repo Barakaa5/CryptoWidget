@@ -1,0 +1,41 @@
+<% include partials/header %>
+
+
+
+
+<div>
+	<div class="payment-header">
+		<div>
+			<img
+				id="apple-image"
+				src="https://cdn3.iconfinder.com/data/icons/picons-social/57/56-apple-512.png"
+			/>
+			<h4>APPLE</h4>
+		</div>
+
+		<div class="payment-header-text">
+			<p>$5,000</p>
+			<p>PAYMENT FOR MACBOOK PRO</p>
+			<p>Order ID: <%= orderID%></p>
+		</div>
+	</div>
+
+	<div class="payment-currncies">
+		<div style="text-align: center; margin-bottom: 20px;">
+			<img style="width: 80px;"
+			 src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/5/50/20120412190544%21Yes_Check_Circle.svg/120px-Yes_Check_Circle.svg.png" >
+		</div>
+		
+		<div class="accepted">
+			<p class="">PAYMENT ACCEPTED!</p>
+			<p style="font-weight: 200;" >
+				You have successfully submitted the payment.<br />Your order with Apple is now paid for.
+			</p>
+			<a style="width: 300px; margin-top: 9px;" class="btn btn-outline-success" href="/">Return to Merchant</a>
+		</div>
+		
+		
+	</div>
+</div>
+
+<% include partials/footer %>

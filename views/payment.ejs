@@ -1,0 +1,130 @@
+<% include partials/header %>
+
+<div>
+	<script> 
+    //----------------------countdown clock-------------------------//
+	var minuteleft = 14;
+    var secondsleft = 59;
+	setInterval(function () {
+	if (minuteleft <= 0) {
+		clearInterval(downloadTimer);
+		document.getElementById('countdown').innerHTML = 'Canceling Payment...';
+	} else {
+		if(minuteleft >=10){
+			if(secondsleft >=10)
+				document.getElementById('countDownClock').innerHTML = minuteleft + ":" + secondsleft;
+			else
+				document.getElementById('countDownClock').innerHTML = minuteleft +":0" + secondsleft;
+		
+		} else{
+			if(secondsleft >=10)
+				document.getElementById('countDownClock').innerHTML = "0" + minuteleft + ":" + secondsleft;
+			else
+				document.getElementById('countDownClock').innerHTML = "0" + minuteleft +":0" + secondsleft;
+		}
+	}
+	secondsleft -= 1; 
+	if(secondsleft <0){
+		secondsleft =59;
+		minuteleft -= 1;
+	}
+}, 1000);
+		//----------------------countdown clock-------------------------//
+	</script>
+
+	<div class="payment-header">
+		<div>
+			<img
+				id="apple-image"
+				src="https://cdn3.iconfinder.com/data/icons/picons-social/57/56-apple-512.png"
+			/>
+			<h4>APPLE</h4>
+		</div>
+
+		<div class="payment-header-text">
+			<p>$5,000</p>
+			<p>PAYMENT FOR MACBOOK PRO</p>
+			<p>Order ID: <%=data.orderID%></p>
+		</div>
+		<p id="countdown"><i class="fa fa-clock-o" aria-hidden="true"></i>  Awaiting payment <span id="countDownClock">15:00</span></p>
+	</div>
+	
+	
+	<div class="payment-currncies">
+		<p id="explain">Complete your payment by sending the <%=data.coinRate%> amount to the address listed below:</p>
+		<div class="amount">
+			<p>Amount of <%=data.coinRate%> to Send</p>
+			<div class="row">
+				<div class="col-10">
+					<input style="text-align: center;" type="text" placeholder="<%=data.coinRate[0]%> <%=data.amount%>">
+				</div>
+		</div>
+		<div class="address">
+			<p>Address</p>
+			<div class="row">
+				<div class="col-10">
+					<input style="text-align: center;" id="textToCopy" type="text" value="<%=data.address%>">
+				</div>
+				<div class="col-2" style="padding-right: 0px; padding-left: 25px;">
+					<i onclick="copyFunction()" class="fa fa-clone" aria-hidden="true">
+						<span id="copied" style="display: none; font-size:10px">copied!</span>
+					</i>
+				</div>
+			</div>
+		</div>
+		<div id="QrButton">
+			<button type="button" id="Show-QR" class="btn btn-success btn-block" onclick="myFunction()">
+				Show QR code instead <i class="fa fa-qrcode" aria-hidden="true"></i>
+			</button>
+			<div id="qrCode">
+				<p>Scan the QR code for payment:</p>
+				<img src="<%=data.QR%>">
+			</div>
+
+		</div>
+		
+
+	</div>
+</div>
+	
+
+<script>
+//------QR Code Show/Hide logic ----------------//
+function myFunction() {
+	var x = document.getElementById('qrCode');
+	var y = document.getElementById('Show-QR');
+	x.style.display = 'inline';
+	y.style.display = 'none';
+}
+//------QR Code Show/Hide logic ----------------//
+
+//------if after 30 secondes payment was accceped - redirect to "success page" ----------------//
+setTimeout(function () {
+	window.location = '/success';
+}, 30000);
+//------if after 30 secondes payment was accceped - redirect to "success page" ----------------//
+	
+//------if after 15 minutes no payment was accceped - redirect to "failed page" ----------------//
+setTimeout(function () {
+	window.location = '/failed';
+}, 900000);
+//------if after 15 minutes no payment was accceped - redirect to "failed page" ----------------//
+
+//------Copy Text logic ----------------//
+function copyFunction() {
+	/* Get the text field */
+	var copyText = document.getElementById('textToCopy');
+
+	/* Select the text field */
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+	/* Copy the text inside the text field */
+	document.execCommand('copy');
+
+	document.getElementById('copied').style.display = 'inline-block';
+}
+	//------Copy Text logic ----------------//
+</script>
+
+<% include partials/footer %>

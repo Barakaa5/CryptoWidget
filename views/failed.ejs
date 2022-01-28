@@ -1,0 +1,43 @@
+<% include partials/header %>
+
+
+
+
+<div>
+	<div class="payment-header">
+		<div>
+			<img
+				id="apple-image"
+				src="https://cdn3.iconfinder.com/data/icons/picons-social/57/56-apple-512.png"
+			/>
+			<h4>APPLE</h4>
+		</div>
+
+		<div class="payment-header-text">
+			<p>$5,000</p>
+			<p>PAYMENT FOR MACBOOK PRO</p>
+			<p>Order ID: <%= orderID%></p>
+		</div>
+	</div>
+
+	<div class="payment-currncies">
+		<div style="text-align: center; margin-bottom: 20px;">
+			<img style="width: 80px;"
+			 src="http://clipart-library.com/image_gallery2/Red-Cross-Mark-Download-PNG.png" >
+		</div>
+		
+		<div  class="accepted">
+			<p class="">NO PAYMENT WAS ACCEPTED!</p>
+			<p style="font-weight: 200;" >
+				We did not detect any submitted payment for your order.
+				<br/> if you have sent a payment at a later time,
+				your payment will still be accepted and credited towards your order with Apple.
+			</p>
+			<a style="width: 300px; margin-top: 9px;" class="btn btn-outline-success" href="/">Return to Merchant</a>
+		</div>
+		
+		
+	</div>
+</div>
+
+<% include partials/footer %>

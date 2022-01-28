@@ -1,0 +1,157 @@
+body {
+	background-color: #f5f6fa;
+}
+
+.navbar {
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+/*-------payment card header------------*/
+.payment-header {
+	background-color: #2e977c;
+	margin: 20px 450px;
+	padding: 0.5rem;
+
+	box-shadow: 0px 3px 0px #364b63;
+}
+.payment-header h4 {
+	color: #052923;
+	margin-left: 2rem;
+	font-weight: 700;
+}
+
+.payment-header #countdown {
+	text-align: center;
+	color: #dfdda9;
+}
+
+.payment-header-text {
+	color: white;
+	margin: 1rem 2rem;
+}
+.payment-header-text p {
+	margin-bottom: 0.1rem;
+}
+
+#apple-image {
+	width: 60px;
+	float: right;
+	padding: 10px;
+}
+
+/*-------payment card header------------*/
+
+/*-------payment card currncies------------*/
+.payment-currncies {
+	background-color: white;
+	margin: 20px 450px;
+	padding: 1rem;
+}
+.payment-currncies h3 {
+	color: #052923;
+	margin-left: 2rem;
+	font-weight: 700;
+}
+.payment-currncies p {
+	text-align: center;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+.payment-currncies #explain {
+	font-size: 12px;
+	text-align: left;
+}
+
+.payment-currncies input {
+	width: 380px;
+	background-color: #fcfbfb;
+	border: solid;
+	border-color: #dce0eb;
+	border-width: 1px;
+	height: 36px;
+}
+.payment-currncies #QrButton {
+	text-align: center;
+
+}
+.payment-currncies #QrButton button {
+	    background-color: #0EAC81;
+    border: none;
+	    margin: 18px 0px;
+
+}
+
+.payment-currncies #QrButton div{
+	text-align: center;
+	display: none;
+}
+.payment-currncies #QrButton div img{
+	  width: 200px;
+}
+
+#QrButton div img:hover {
+	transform: translate(0 ,2px);
+	transition: box-shadow .3s;
+	box-shadow: 0 0 50px rgba(33,33,33,.2); 
+}
+
+.payment-currncies #QrButton div p{
+	  text-align: center;
+}
+
+.payment-currncies .amount {
+	text-align: center;
+	margin-bottom: 10px;
+}
+.amount p {
+	text-align: left;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+}
+
+.payment-currncies .address {
+	text-align: center;
+		margin-bottom: 10px;
+}
+.address p {
+	text-align: left;
+}
+
+.coin {
+	border: solid;
+	border-color: #dce0eb;
+	padding: 10px;
+	border-width: 1px;
+	margin: auto;
+	font-weight: 700;
+	cursor: pointer;
+    width: 417px;
+    height: 62px;
+    background-color: #FFFFFF;
+}
+.coin:hover {
+	transform: translate(0 ,-2px);
+	transition: box-shadow .3s;
+	box-shadow: 0 0 50px rgba(33,33,33,.2); 
+}
+
+.coin p {
+	margin: 8px;
+}
+
+.coin-image {
+	width: 60px;
+	float: right;
+	padding: 0px 10px;
+}
+
+/*-------payment card currncies------------*/
+
+/*-------accepted page------------*/
+.accepted {
+	text-align: center;
+}
+
+/*-------accepted page------------*/
